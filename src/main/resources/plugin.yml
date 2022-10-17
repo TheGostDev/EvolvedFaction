@@ -1,7 +1,7 @@
 name: EvolvedFaction
 version: '${project.version}'
-main: faction.evolvedfaction.EvolvedFaction
+main: com.thegost.evolvedfaction.EvolvedFaction
 api-version: 1.19
 authors: [ TheGost ]
 description: Pvp-Faction plugin
-website: None
+website: https://github.com/TheGostDev/EvolvedFaction
