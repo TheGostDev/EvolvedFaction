@@ -1,0 +1,6 @@
+** EvolvedFaction - Idea **
+
+
+- Faction cmd *classic*                                             }
+- Mangadd / manuadd cmd *classic*                                   }        - MySQL Link **
+- Coming soon                                                       }
