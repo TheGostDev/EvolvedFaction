@@ -1,7 +1,11 @@
 package com.thegost.evolvedfaction;
 
+import com.thegost.evolvedfaction.commands.GradeCMD;
+import com.thegost.evolvedfaction.database.DBManager;
 import com.thegost.evolvedfaction.player.PlayerChatListener;
 import com.thegost.evolvedfaction.player.PlayerJoinListener;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
@@ -20,12 +24,21 @@ public final class EvolvedFaction extends JavaPlugin {
         getServer().getConsoleSender().sendMessage("§aEvolvedFaction > Turned ON");
 
         instance = this;
+        registerEvents();
+        registerCommands();
 
         dbManager = new DBManager();
         playerGrade = new HashMap<>();
+    }
 
-        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
-        getServer().getPluginManager().registerEvents(new PlayerChatListener(this), this);
+    private void registerEvents() {
+        PluginManager pm = Bukkit.getPluginManager();
+        pm.registerEvents(new PlayerJoinListener(this), this);
+        pm.registerEvents(new PlayerChatListener(this), this);
+    }
+
+    private void registerCommands() {
+        getCommand("grade").setExecutor(new GradeCMD(this));
     }
 
     @Override

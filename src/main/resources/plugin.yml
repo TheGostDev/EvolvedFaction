@@ -5,3 +5,8 @@ api-version: 1.19
 authors: [ TheGost ]
 description: Pvp-Faction plugin
 website: https://github.com/TheGostDev/EvolvedFaction
+commands:
+  grade:
+    description: Manage grade of your server
+    aliases:
+      - g

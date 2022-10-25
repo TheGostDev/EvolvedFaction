@@ -1,7 +1,7 @@
 package com.thegost.evolvedfaction.player;
 
 import com.thegost.evolvedfaction.EvolvedFaction;
-import com.thegost.evolvedfaction.SQLConnection;
+import com.thegost.evolvedfaction.database.SQLConnection;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -52,12 +52,12 @@ public class PlayerJoinListener implements Listener {
             final long time = System.currentTimeMillis();
 
             preparedStatement.setString(1, uuid.toString());
-            preparedStatement.setString(2, "Vagabond");
+            preparedStatement.setString(2, "Novice");
             preparedStatement.setTimestamp(3, new Timestamp(time));
             preparedStatement.setTimestamp(4, new Timestamp(time));
             preparedStatement.executeUpdate();
 
-            evolvedFaction.getPlayerGrade().put(uuid, "Vagabond");
+            evolvedFaction.getPlayerGrade().put(uuid, "Novice");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

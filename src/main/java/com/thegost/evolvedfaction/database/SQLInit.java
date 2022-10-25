@@ -1,4 +1,4 @@
-package com.thegost.evolvedfaction;
+package com.thegost.evolvedfaction.database;
 
 public class SQLInit {
 
